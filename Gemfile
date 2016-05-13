@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+gem 'slim', '~> 3.0', '>= 3.0.6'
+gem 'devise', '~> 4.1'
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
+gem 'materialize-sass', '~> 0.97.6'
+gem 'font-awesome-rails', '~> 4.6', '>= 4.6.2.0'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
