@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BookReview</title>
+  <title>TaskManager</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= console %>
-<%= yield %>
-
+	<%= console %>
+	<header>
+		<nav>
+	    <div class="nav-wrapper indigo">
+		    <div class="container">
+		    	<%= link_to "TaskManager", root_path, class: 'brand-logo'%>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		        <li><a href="#">Log in</a></li>
+		        <li><a href="#">Log out</a></li>
+		      </ul>
+	      </div>
+	    </div>
+	  </nav>
+	</header>
+	<main>
+		<div class="container"><%= yield %></div>
+	</main>
+	<footer>
+		
+	</footer>
 </body>
 </html>

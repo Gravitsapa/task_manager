@@ -1,0 +1,25 @@
+
+- @projects.each do |project|
+	div class='card-panel white'
+		h4 = project.name
+		= simple_form_for [project, project.tasks.build] do |t|
+			= t.input :name
+			= t.submit
+		ul
+			-project.tasks.each do |task|
+				li =task.name
+
+		
+div class="fixed-action-btn" style="bottom: 45px; right: 24px;"
+  a class="btn-floating btn-large red modal-trigger" href="#add_project"
+  	= fa_icon('plus')
+
+div id="add_project" class="modal"
+  div class="modal-content"
+    h4 Modal Header
+    = simple_form_for @project do |p|
+			= p.input :name
+			= p.submit
+  div class="modal-footer"
+    a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat"
+    	| Agree
