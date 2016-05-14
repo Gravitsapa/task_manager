@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :projects, except: :show do 
-    resources :tasks, except: :show
+    resources :tasks, only: [:create, :update, :destroy]
   end
 
   root 'projects#index'
