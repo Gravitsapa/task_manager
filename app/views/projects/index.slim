@@ -1,10 +1,16 @@
 
 - @projects.each do |project|
 	div class='card-panel white'
-		h4 = project.name
+		div class="card-title valign-wrapper"
+			h4 = project.name
+			span class='project-action'
+				= link_to(fa_icon('pencil-square-o', class: "fa-2x"), project_path(project))
+				= link_to(fa_icon('trash-o', class: "fa-2x"), project_path(project), method: :delete)
+		hr
 		= simple_form_for [project, project.tasks.build] do |t|
 			= t.input :name
 			= t.submit
+		hr
 		ul
 			-project.tasks.each do |task|
 				li =task.name

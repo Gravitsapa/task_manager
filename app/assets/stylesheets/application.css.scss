@@ -16,3 +16,30 @@
 
  @import "font-awesome";
  @import "materialize";
+
+.card-panel {
+	
+	hr {
+		color: #eee;
+		margin: 10px -20px;
+	}
+
+	.card-title{
+
+		h4 {
+			display: inline;
+		}
+
+		.project-action {
+			margin-left: auto;
+
+			i {
+				margin: 1rem 0 1rem 1.5rem;
+			}
+		}
+
+
+	}
+
+
+}
