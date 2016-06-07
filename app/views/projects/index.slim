@@ -11,9 +11,11 @@
 			= t.input :name
 			= t.submit
 		hr
-		ul
-			-project.tasks.each do |task|
-				li =task.name
+		ul id="tasks" data-update-url="#{sort_project_tasks_url(project)}"
+			-project.tasks.order("priority").each do |task|
+				li id="task_#{task.id}"
+					span class="handle" drag
+					=task.name
 
 		
 div class="fixed-action-btn" style="bottom: 45px; right: 24px;"

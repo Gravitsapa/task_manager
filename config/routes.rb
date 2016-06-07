@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   resources :projects, except: [:show, :new] do 
-    resources :tasks, only: [:create, :update, :destroy]
+    resources :tasks, only: [:create, :update, :destroy] do
+      collection { post :sort }
+    end
   end
 
   root 'projects#index'

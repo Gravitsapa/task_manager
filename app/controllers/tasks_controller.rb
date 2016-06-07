@@ -18,6 +18,13 @@ class TasksController < ApplicationController
 		
 	end
 
+	def sort
+		params[:task].each_with_index do |k, v| 
+			Task.where(params[:project_id]).update(k, priority: v+1) 
+		end
+		render nothing: true
+	end
+
 	private
 	
 		def task_params
