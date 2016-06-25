@@ -17,11 +17,14 @@ class ProjectsController < ApplicationController
 	end
 
 	def edit
-		
 	end
 
 	def update
-		
+		if @project.update_attributes(project_params) 
+			redirect_to root_path
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy

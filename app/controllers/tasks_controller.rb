@@ -1,8 +1,10 @@
 class TasksController < ApplicationController
 
+	before_action :find_task, only: [:edit, :update, :destroy]
+
 	def create
 		@project = Project.find(params[:project_id])
-		@task = @project.tasks.create(task_params)
+		@task = @project.tasks.build(task_params)
 		if @task.save
 			redirect_to root_path
 		else
@@ -10,12 +12,20 @@ class TasksController < ApplicationController
 		end
 	end
 
-	def update
+	def edit
+	end
 
+	def update
+		if @project.tasks.find(@task).update_attributes(task_params)
+			redirect_to root_path
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
-		
+		@project.tasks.find(@task).destroy
+		redirect_to root_path
 	end
 
 	def sort
@@ -29,6 +39,11 @@ class TasksController < ApplicationController
 	
 		def task_params
 			params.require(:task).permit(:name, :status, :project_id)
+		end
+
+		def find_task
+			@project = Project.find(params[:project_id])
+			@task = Task.find(params[:id])
 		end
 
 end

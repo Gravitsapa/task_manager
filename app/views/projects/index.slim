@@ -4,7 +4,7 @@
 		div class="card-title valign-wrapper"
 			h4 = project.name
 			span class='project-action'
-				= link_to(fa_icon('pencil-square-o', class: "fa-2x"), project_path(project))
+				= link_to(fa_icon('pencil-square-o', class: "fa-2x"), edit_project_path(project))
 				= link_to(fa_icon('trash-o', class: "fa-2x"), project_path(project), method: :delete)
 		hr
 		= simple_form_for [project, project.tasks.build] do |t|
@@ -15,6 +15,8 @@
 			-project.tasks.order("priority").each do |task|
 				li id="task_#{task.id}"
 					span class="handle" drag
+					= link_to 'edit', edit_project_task_path(project, task)
+					= link_to 'delete', project_task_path(project, task), method: :delete
 					=task.name
 
 		
