@@ -12,11 +12,6 @@
 //
 //= require jquery
 //= require jquery-ui
-//= require materialize-sprockets
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-$(document).ready(function(){
-  $('.modal-trigger').leanModal();
-});

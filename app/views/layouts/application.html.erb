@@ -6,25 +6,23 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-	<%= console %>
-	<header>
-		<nav>
-	    <div class="nav-wrapper indigo">
-		    <div class="container">
-		    	<%= link_to "TaskManager", root_path, class: 'brand-logo'%>
-		      <ul id="nav-mobile" class="right hide-on-med-and-down">
-		        <li><a href="#">Log in</a></li>
-		        <li><a href="#">Log out</a></li>
-		      </ul>
-	      </div>
-	    </div>
-	  </nav>
+<body class="page">
+	<div class="page__head-line"></div>
+	<header class="page__container">
+		<div class="head">
+			<div class="head__content">
+				<div class="logo">
+					<h3 class="logo__large-logo">Simple TODO list</h3>
+					<h5 class="logo__small-logo">From Ryby Garage</h5>
+				</div>
+			</div>
+		</div>
 	</header>
-	<main>
-		<div class="container"><%= yield %></div>
+	
+	<main class="page__container">
+		<%= yield %>
 	</main>
-	<footer>
+	<footer class="page__container">
 		
 	</footer>
 </body>

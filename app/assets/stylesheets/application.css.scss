@@ -14,32 +14,243 @@
  *= require_self
  */
 
- @import "font-awesome";
- @import "materialize";
+ @import 'normalize';
 
-.card-panel {
-	
-	hr {
-		color: #eee;
-		margin: 10px -20px;
-	}
+ $project-head-height: 50px;
 
-	.card-title{
+ @mixin icon($url) {
+		background: asset-url($url) no-repeat 50% 50%;
+ }
 
-		h4 {
-			display: inline;
-		}
+.page {
+	background: #AB510B asset-url("bg.png") repeat-x;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-		.project-action {
-			margin-left: auto;
+.page__head-line {
+	background-color: #333;
+	height: 6px;
+}
 
-			i {
-				margin: 1rem 0 1rem 1.5rem;
-			}
-		}
+.page__container {
+	margin: 0 auto;
+	width: 700px;
+}
 
+.project {
+	margin-bottom: 40px;
+}
 
-	}
+.head {
+	padding: 30px 10px;
+}
 
+.head__content {
+	padding: 30px 0;
+}
 
+.logo {
+	text-align: center;
+	text-shadow: #fff 1px 1px 1px;
+	text-transform: uppercase;
+}
+
+.logo__large-logo {
+	font-size: 26px;
+	font-weight: 600;
+	margin: 10px 0;
+}
+
+.logo__small-logo {
+	font-size: 18px;
+	margin: 10px 0;
+}
+
+.project__head {
+	background: asset-url("calendar_ico.png") no-repeat 15px 50%, #4972AF asset-url("project-head_bg.png") repeat-x;
+	border: 1px solid #41618F;
+	height: $project-head-height;
+	position: relative;
+}
+
+.project__head:hover .actions, .task:hover .actions {
+	display: inline-block;
+}
+
+.project-title {
+	color: #fff;
+	font-size: 1.1rem;
+	line-height: $project-head-height;
+	margin: 0 0 0 $project-head-height;
+	text-shadow: #333 0 1px 0;
+}
+
+.project-actions {
+	float: right;
+	line-height: $project-head-height;
+	padding-right: 15px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.actions{
+	display: none;
+}
+
+.actions__one-action {
+	border-left: 1px solid #5284bf;
+	display: inline-block;
+	height: 16px;
+	padding: 0 10px;
+	width: 16px;
+}
+
+.actions__one-action_small {
+	height: 12px;
+	width: 12px;
+}
+
+.actions__one-action:first-child {
+	border-left: none;
+}
+
+.actions__edit {
+	@include icon("pencil_ico.png");
+}
+
+.actions__delete {
+	@include icon("trash_ico.png");
+}
+
+.actions__move_small {
+	@include icon("move-small_ico.png");
+}
+
+.actions__edit_small {
+	@include icon("pencil-small_ico.png");
+}
+
+.actions__delete_small {
+	@include icon("trash-small_ico.png");
+}
+
+.project__task-creation {
+	height: $project-head-height;
+	background: -moz-linear-gradient(top, #e1e1e1 0%, #ccc 100%);
+	border: 1px solid #aaa;
+	border-top: none;
+	border-bottom: none;
+}
+
+.project-icon {
+	background: asset-url("add_task_ico.png") no-repeat 15px 50%;
+	display: inline-block;
+	float: left;
+	height: $project-head-height;
+	width: $project-head-height;
+}
+
+.simple_form.new_task {
+	display: table;
+	height: 100%;
+}
+
+.add-task__input {
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.add-task__button {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.add-task {
+	height: $project-head-height;
+	margin: 0 15px 0 50px;
+}
+
+.ui-sortable {
+	margin: 0;
+}
+
+.project__task-box {
+	background-color: #fff;
+	border: 1px solid #aaa;
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+	overflow: hidden;
+}
+
+.task_name {
+	border-top: 1px solid #707070;
+	border-left: 1px solid #cfcfcf;
+	box-sizing: border-box;
+}
+
+.task-input {
+	border: none;
+	border-top: 1px solid #cfcfcf;
+	box-sizing: border-box;
+	height: 27px;
+	padding-left: 15px;
+	width: 100%;
+}
+
+.task-button {
+	background: -moz-linear-gradient(top, #94cbae 0%, #508767 100%);
+	border: 1px solid #447557;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	cursor: pointer;
+	color: #fff;
+	font-size: .8rem;
+	font-weight: 600;
+	height: 28px;
+	padding: 0 20px;
+	text-shadow: #333 0 1px 0;
+}
+
+.task-box {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.task {
+	border-top: 1px solid #e7ebea;
+	border-bottom: 1px solid #e7ebea;
+	display: table;
+	height: 50px;
+	width: 100%;
+}
+
+.task:hover {
+	background-color: #fcfed5;
+}
+
+.task__check {
+	border-right: 1px solid #efdadf;
+	width: 35px;
+	height: 50px;
+	padding: 0 0 0 15px;
+}
+
+.taks-chbx {
+	border-right: 1px solid #efdadf;
+	margin-right: 5px;
+	height: 103%;
+	line-height: 53px;
+}
+
+.task__name {
+	color: #999;
+	padding: 0 0 0 15px;
+	font-weight: bold;
+}
+
+.task__actions {
+	border-left: 1px solid #e7ebea;
+	width: 112px;
 }
