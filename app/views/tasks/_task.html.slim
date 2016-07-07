@@ -1,0 +1,11 @@
+tr id="task_#{task.id}" class="task"
+	td.task__check
+		.taks-chbx
+			input type="checkbox"
+	td.task__name
+		= task.name
+	td.task__actions
+		span.actions
+			span.handle.actions__one-action.actions__move_small.actions__one-action_small
+			= link_to '', edit_project_task_path(@project, task), class: 'actions__one-action actions__edit_small actions__one-action_small', remote: true
+			= link_to '', project_task_path(@project, task), method: :delete, class: 'actions__one-action actions__delete_small actions__one-action_small', remote: true

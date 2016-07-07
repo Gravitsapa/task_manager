@@ -4,16 +4,20 @@ class ProjectsController < ApplicationController
 
 	def index
 		@projects = Project.all
+	end
+
+	def new
 		@project = Project.new
+		render layout: false
 	end
 
 	def create
-		@project = Project.new(project_params)
-		if @project.save
-			redirect_to root_path
-		else
-			render 'new'
+		@project = Project.create!(project_params)
+		respond_to do |format|
+			format.html { redirect_to(root_path) }
+			format.js
 		end
+		
 	end
 
 	def edit
@@ -29,7 +33,11 @@ class ProjectsController < ApplicationController
 
 	def destroy
 		@project.destroy
-		redirect_to root_path
+		respond_to do |format|
+			format.html { redirect_to root_path }
+			format.js
+		end
+		
 	end
 
 	private

@@ -2,7 +2,7 @@
 // All this logic will automatically be available in application.js.
 
 $(document).ready(function() {
-  return $('#tasks').sortable({
+  return $('.tasks').sortable({
     axis: 'y',
     handle: '.handle',
     update: function() {

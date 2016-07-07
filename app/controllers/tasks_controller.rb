@@ -5,11 +5,15 @@ class TasksController < ApplicationController
 	def create
 		@project = Project.find(params[:project_id])
 		@task = @project.tasks.build(task_params)
-		if @task.save
-			redirect_to root_path
-		else
-			render root_path
+		respond_to do |format|
+			if @task.save
+				format.html { redirect_to root_path }
+				format.js
+			else
+				render root_path
+			end
 		end
+		
 	end
 
 	def edit
@@ -25,14 +29,17 @@ class TasksController < ApplicationController
 
 	def destroy
 		@project.tasks.find(@task).destroy
-		redirect_to root_path
+		respond_to do |format|
+			format.html { redirect_to root_path }
+			format.js
+		end
 	end
 
 	def sort
 		params[:task].each_with_index do |k, v| 
 			Task.where(params[:project_id]).update(k, priority: v+1) 
 		end
-		render nothing: true
+		render body: nil
 	end
 
 	private
