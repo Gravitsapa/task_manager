@@ -1,4 +1,5 @@
 
 = render partial: "project", collection: @projects
 
-= link_to 'New project', new_project_path, id: 'new-project', remote: true
+.new-project#new-project
+	= link_to 'Add TODO List', new_project_path, class: 'add-project', remote: true

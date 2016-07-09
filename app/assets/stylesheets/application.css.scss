@@ -261,3 +261,21 @@
   padding-left: 50px;
   vertical-align: middle;
 }
+
+.new-project {
+	text-align: center;
+}
+
+.add-project {
+	background: asset-url("add_project_ico.png") no-repeat 15px 50%, #4972AF asset-url("project-head_bg.png") repeat-x;
+	border: 1px solid #315589;
+	border-radius: 2px;
+	display: inline-block;
+	font-weight: bold;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 35px 0 50px;
+	color: #fff;
+	text-shadow: #333 0 1px 0;
+	text-decoration: none;
+}
