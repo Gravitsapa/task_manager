@@ -21,14 +21,21 @@ class ProjectsController < ApplicationController
 	end
 
 	def edit
+		respond_to do |format|
+			format.js
+		end
 	end
 
 	def update
-		if @project.update_attributes(project_params) 
-			redirect_to root_path
-		else
-			render 'edit'
+		respond_to do |format|
+			if @project.update_attributes(project_params) 
+				format.html { redirect_to root_path }
+				format.js
+			else
+				format.html { render 'edit' }
+			end
 		end
+		
 	end
 
 	def destroy

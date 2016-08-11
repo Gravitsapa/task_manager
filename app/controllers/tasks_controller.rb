@@ -17,13 +17,19 @@ class TasksController < ApplicationController
 	end
 
 	def edit
+		respond_to do |format|
+			format.js
+		end
 	end
 
 	def update
-		if @project.tasks.find(@task).update_attributes(task_params)
-			redirect_to root_path
-		else
-			render 'edit'
+		respond_to do |format|
+			if @project.tasks.find(@task).update_attributes(task_params)
+				format.html { redirect_to root_path }
+				format.js
+			else
+				render 'edit'
+			end
 		end
 	end
 

@@ -1,5 +1,4 @@
-.project#project
-	.project__head
-		.project-input
-			= simple_form_for @project, remote: true do |p|
-				= p.input :name, label: false
+.project__head
+	.project-input
+		= simple_form_for @project, remote: true do |p|
+			= p.input :name, label: false

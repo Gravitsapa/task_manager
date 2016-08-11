@@ -1,0 +1,2 @@
+$('#task_<%= @task.id %> .task__name').text('');
+$('#task_<%= @task.id %> .task__name').text('<%= Task.find(@task).name %>');
