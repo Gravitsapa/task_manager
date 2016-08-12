@@ -1,7 +1,11 @@
 tr id="task_#{task.id}" class="task"
 	td.task__check
 		.taks-chbx
-			input type="checkbox"
+			= simple_form_for [@project, task], 
+				url: project_task_path(@project, task), 
+				remote: true,
+				authenticity_token: true do |t|
+					= t.input :status, label: false, input_html: { onclick: "this.form.submit();" }
 	td.task__name
 		= task.name
 	td.task__actions

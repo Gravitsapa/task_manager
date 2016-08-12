@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
 
-	before_action :find_task, only: [:edit, :update, :destroy]
+	before_action :find_task, only: [:edit, :update, :destroy, :complete]
 
 	def create
 		@project = Project.find(params[:project_id])
@@ -51,7 +51,7 @@ class TasksController < ApplicationController
 	private
 	
 		def task_params
-			params.require(:task).permit(:name, :status, :project_id)
+			params.require(:task).permit(:name, :status)
 		end
 
 		def find_task

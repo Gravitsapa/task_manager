@@ -11,6 +11,10 @@ $project-head-height: 50px;
 	background: asset-url($url) no-repeat 50% 50%;
 }
 
+.strikethrough {
+	text-decoration: line-through;
+}
+
 .page {
 	background: #AB510B asset-url("bg.png") repeat-x;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
