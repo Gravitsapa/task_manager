@@ -5,7 +5,7 @@ tr id="task_#{task.id}" class="task"
 				url: project_task_path(@project, task), 
 				remote: true,
 				authenticity_token: true do |t|
-					= t.input :status, label: false, input_html: { onclick: "this.form.submit();" }
+					= t.input :status, label: false, input_html: { onclick: "submitOnCheck(#{task.id})" }
 	td.task__name
 		= task.name
 	td.task__actions
