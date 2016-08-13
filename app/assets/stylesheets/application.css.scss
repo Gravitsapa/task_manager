@@ -11,10 +11,6 @@ $project-head-height: 50px;
 	background: asset-url($url) no-repeat 50% 50%;
 }
 
-.strikethrough {
-	text-decoration: line-through;
-}
-
 .page {
 	background: #AB510B asset-url("bg.png") repeat-x;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -271,4 +267,12 @@ $project-head-height: 50px;
 	color: #fff;
 	text-shadow: #333 0 1px 0;
 	text-decoration: none;
+}
+
+.footer {
+	color: #eee;
+	height: 50px;
+	line-height: 50px;
+	padding-top: 20px;
+	text-align: center;
 }
