@@ -25,12 +25,10 @@
 										remote: true, 
 										authenticity_token: true do |t|
 											= t.input :status, label: false, input_html: { onclick: "submitOnCheck(#{task.id})" }
-							- if task.completed?
-								td.task__name.strikethrough
-									= task.name
-							- else
-								td.task__name
-									= task.name
+							td class=(task.completed? ? 'task__name strikethrough' : 'task__name')
+								= task.name
+								span style="float: right"
+									= task.deadline.strftime("%d-%m-%Y %R")
 							td.task__actions
 								span.actions
 									span.handle.actions__one-action.actions__move_small.actions__one-action_small
