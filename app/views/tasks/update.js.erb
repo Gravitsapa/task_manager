@@ -1,7 +1,7 @@
-if ('<%=!@task.completed?%>' === 'true')
-	$('#task_<%= @task.id %> .task__name').addClass('strikethrough');
+if ('<%=@task.completed?%>' === 'true')
+	$('#task_<%= @task.id %> .task-name').addClass('strikethrough');
 else
-	$('#task_<%= @task.id %> .task__name').removeClass('strikethrough');
+	$('#task_<%= @task.id %> .task-name').removeClass('strikethrough');
 
-$('#task_<%= @task.id %> .task__name').text('');
-$('#task_<%= @task.id %> .task__name').text('<%= Task.find(@task).name %>');
+$('#task_<%= @task.id %> .task-name').text('');
+$('#task_<%= @task.id %> .task-name').text('<%= Task.find(@task).name %>');

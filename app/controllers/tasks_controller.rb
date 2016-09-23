@@ -26,6 +26,7 @@ class TasksController < ApplicationController
 		respond_to do |format|
 			if @project.tasks.find(@task).update_attributes(task_params)
 				format.html { redirect_to root_path }
+				find_task
 				format.js
 			else
 				render 'edit'

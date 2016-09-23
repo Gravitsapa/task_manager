@@ -233,15 +233,25 @@ $project-head-height: 50px;
 	line-height: 53px;
 }
 
-.task__name {
+.task__info {
 	color: #999;
-	padding: 0 0 0 15px;
+	padding: 0 15px;
 	font-weight: bold;
 }
 
 .task__actions {
 	border-left: 1px solid #e7ebea;
 	width: 112px;
+}
+
+.task-deadline {
+	border-radius: 8px;
+	color: white;
+	float: right;
+	font-weight: normal;
+	font-size: .75rem;
+	background-color: red;
+	padding: 2px 5px;
 }
 
 .project-input {
