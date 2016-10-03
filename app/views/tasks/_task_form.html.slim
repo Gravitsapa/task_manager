@@ -1,3 +1,4 @@
 = simple_form_for [@project, @task], remote: true do |t|
 	= t.input :name, label: false
-	= t.input :deadline, label: false
+	= t.input :deadline, as: :string, label: false, input_html: { class: "datepick" }
+	= t.button :submit, class: 'hide'

@@ -2,6 +2,7 @@
 // All this logic will automatically be available in application.js.
 
 $(document).ready(function() {
+
   return $('.tasks').sortable({
     axis: 'y',
     handle: '.handle',
@@ -10,3 +11,11 @@ $(document).ready(function() {
     }
   });
 });
+
+var reinitDatepicker = function(current){
+	current.find('.datepick').datepicker({
+		timepicker: true, 
+		timeFormat: "hh:ii",
+		dateFormat: "yyyy-mm-dd"
+	});
+};

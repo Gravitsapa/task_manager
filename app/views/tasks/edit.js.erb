@@ -1,1 +1,6 @@
+
 $('#task_<%=@task.id%> .task-name').text('').append('<%= j render('task_form') %>');
+$('#task_<%=@task.id%> .task-deadline').hide();
+
+var current = $('#task_<%=@task.id%>');
+reinitDatepicker(current);
