@@ -4,3 +4,12 @@ var submitOnCheck = function(id){
 	$("#edit_task_"+id).submit();
 };
 
+var initTasks = function() {
+  return $('.tasks').sortable({
+    axis: 'y',
+    handle: '.handle',
+    update: function() {
+      return $.post($(this).data('update-url'), $(this).sortable('serialize'));
+    }
+  });
+};
