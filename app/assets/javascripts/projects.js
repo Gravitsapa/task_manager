@@ -3,3 +3,4 @@
 var submitOnCheck = function(id){
 	$("#edit_task_"+id).submit();
 };
+
